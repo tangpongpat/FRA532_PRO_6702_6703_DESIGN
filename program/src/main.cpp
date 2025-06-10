@@ -1,41 +1,33 @@
-#include <Arduino.h>
+  #include <Arduino.h>
 
-const int COIL_PIN    = 25;
-const int PWM_CHANNEL = 0;
-const int PWM_FREQ    = 1000;
-const int PWM_RES     = 8;
+  const int COIL1_PIN = 25;
+  const int COIL2_PIN = 26;
+  const int PWM_CH1    = 0;
+  const int PWM_CH2    = 1;
+  const int PWM_FREQ   = 1000;  // 1 kHz
+  const int PWM_RES    = 8;     // 8-bit
+  const int DUTY_50    = 100;   // 50% duty max 225
 
-void setup() {
-  Serial.begin(115200);
-  // configure PWM
-  ledcSetup(PWM_CHANNEL, PWM_FREQ, PWM_RES);
-  ledcAttachPin(COIL_PIN, PWM_CHANNEL);
-}
+  // Pulse parameters (in ms):
+  const uint16_t ON_TIME_MS  = 10;  // coil on for 10 ms
+  const uint16_t OFF_TIME_MS = 5;  // coil off for 20 ms
 
-void loop() {
-  // 1) Enable full-on PWM
-  ledcWrite(PWM_CHANNEL, 255);
-  Serial.println("PWM ON");
-  delay(5000);
+  void setup() {
+    ledcSetup(PWM_CH1, PWM_FREQ, PWM_RES);
+    ledcAttachPin(COIL1_PIN, PWM_CH1);
 
-  // 2) Disable by duty=0
-  ledcWrite(PWM_CHANNEL, 0);
-  Serial.println("PWM OFF (duty=0)");
-  delay(5000);
+    ledcSetup(PWM_CH2, PWM_FREQ, PWM_RES);
+    ledcAttachPin(COIL2_PIN, PWM_CH2);
+  }
 
-  // 3) Re-enable PWM
-  ledcWrite(PWM_CHANNEL, 255);
-  Serial.println("PWM ON again");
-  delay(5000);
+  void loop() {
+    // — ON phase —
+    ledcWrite(PWM_CH1, DUTY_50);
+    ledcWrite(PWM_CH2, DUTY_50);
+    delay(ON_TIME_MS);
 
-  // 4) Detach PWM completely
-  ledcDetachPin(COIL_PIN);
-  Serial.println("PWM Detached");
-  delay(5000);
-
-  // 5) Re-attach and continue
-  ledcAttachPin(COIL_PIN, PWM_CHANNEL);
-  ledcWrite(PWM_CHANNEL, 255);
-  Serial.println("PWM Re-Attached and ON");
-  delay(5000);
-}
+    // — OFF phase —
+    ledcWrite(PWM_CH1, 0);
+    ledcWrite(PWM_CH2, 0);
+    delay(OFF_TIME_MS);
+  }
