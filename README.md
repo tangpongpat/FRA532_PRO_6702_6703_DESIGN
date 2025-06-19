@@ -125,6 +125,7 @@ The coil brake consistently results in shorter stopping distances, confirming it
 - [ ] Front Break
 - [ ] replace DIY Board with pcb 
 - [ ] Reposition the shock absorber mounting
+- [ ] Minimize backlash on steering ackermann 
 
 ## Ref
 
