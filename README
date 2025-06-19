@@ -1,15 +1,77 @@
-##  Coil Specs
+## drift concept 
 
-| Property | Value |
-|----------|-------|
-| Core Type | Metal coin |
-| Outer Diameter | 12 mm |
-| Inner Hole Diameter | 8 mm |
-| Wire Used | 0.5 mm magnet wire |
-| Number of Turns | 270 rounds |
-| Power | 12V DC |
-| Estimated Resistance | ~1.5 ohms  |
+Drifting is make a car oversteering , causing a loss of traction in the rear wheels while maintaining control and driving the car through the entirety of a corner. In this project, we focus on enabling drift by tuning the balance between traction, power, and braking force, especially in rear-wheel drive (RWD) setups.
+<p align="center">
+    <img src=".images/drift_typical_connering.PNG" alt="coil" width="400" />
+</p>
 
-## output 
-- The coil is able to **lift or pull up to ~400 grams**
+- In **typical cornering**, front tires steer in the direction of the curve, and rear tires maintain traction.
+- In **drift cornering**, the vehicle is rotated into the turn, and the **rear tires are saturated**, sliding outward as the front wheels counter-steer to maintain directional control.
+- The vehicle exhibits a **high sideslip angle (β)** and controlled **yaw rate (ψ)**, while lateral acceleration (aᵧ) still points toward the center of the curve.
 
+
+## Transmisstion system
+Originally based on an all-wheel-drive (AWD) layout, the F1TEETH platform has been modified to **rear-wheel drive (RWD)** to improve the ability to break traction at the rear wheels. This configuration allows better control over drifting behavior and enables intentional oversteer, which is essential for sustained drifts.
+
+To achieve this, the **driveshaft connecting the motor to the front wheels was removed**, effectively disabling the front-wheel drive and converting the system into a purely rear-wheel-driven platform.
+
+## Braking System
+I chose to use a magnetic braking system because it requires the **least amount of space for installation**, especially compared to traditional servo-based brakes, which are often bulky. The magnetic setup is also **lighter in weight**, making it more suitable for small-scale RC vehicles. Additionally, this design allows for the possibility of implementing **ABS-like behavior**, helping the car come to a stop smoothly and precisely with minimal wheel lock-up.
+
+
+
+## Hardware
+
+* **Braking Schematic:** [Braking Schematic](/.doc/Schematic_break_2025-06-09.pdf)
+
+
+###  Disc Brake Specifications
+| Property         | Value   |
+|------------------|---------|
+| Outer Diameter   | 14.5 mm |
+| Drump Thickness   | 3 mm    |
+| Axial Length     | 15.6 mm |
+
+### Coil Specifications
+
+| Property         | Value              |
+| ---------------- | ------------------ |
+| Core Type        | Steel              |
+| Outer Diameter   | 12 mm              |
+| Inner Diameter   | 8 mm               |
+| Wire Used        | 0.5 mm magnet wire |
+| Power            | 12V DC             |
+| Resistance       | \~1.5 Ω            |
+| Current          | \~8 A              |
+| Application Load | \~2 kg             |
+
+### 🧮 Magnetic Force Estimation
+
+| Symbol | Value          | Description                   |
+| ------ | -------------- | ----------------------------- |
+| N      | 270 turns      | Number of coil windings       |
+| I      | 8 A            | Coil current                  |
+| A      | 1.13 × 10⁻⁴ m² | Core area (radius = 6 mm)     |
+| g      | 0.0003 m       | Air gap (0.3 mm)              |
+| μᵣ     | 1000           | Relative permeability (steel) |
+| μ₀     | 4π × 10⁻⁷ H/m  | Vacuum permeability constant  |
+
+$$
+F = \frac{N^2 \cdot \mu \cdot A \cdot I^2}{2 \cdot g^2}
+$$
+
+***Estimated force:** 60 N at full load > RC car mass 3 KG
+
+
+
+### Known Issues (MK I)
+
+* **1.1** Mount misalignment between the coil’s actuator surface and the brake disc
+
+<p align="center">
+    <img src=".images/problem_1.JPG" alt="coil" width="200" />
+</p>
+
+## Refferent
+
+https://www.mdpi.com/2079-9292/7/12/394
