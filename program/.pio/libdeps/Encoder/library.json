@@ -1,0 +1,20 @@
+{
+  "name":        "Encoder",
+  "version":     "1.0.0",
+  "description": "Quadrature encoder reader (interrupt-based) for ESP32/Arduino",
+  "keywords":    "encoder,quadrature,ESP32,interrupt",
+  "repository": {
+    "type": "git",
+    "url":  "https://github.com/yourname/Encoder.git"
+  },
+  "authors": [
+    {
+      "name":       "Your Name",
+      "email":      "you@example.com",
+      "maintainer": true
+    }
+  ],
+  "license":    "MIT",
+  "frameworks": "arduino",
+  "platforms":  "espressif32"
+}
