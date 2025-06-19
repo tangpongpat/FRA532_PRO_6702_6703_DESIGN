@@ -1,14 +1,22 @@
-## drift concept 
+## Drift Concept
 
-Drifting is make a car oversteering , causing a loss of traction in the rear wheels while maintaining control and driving the car through the entirety of a corner. In this project, we focus on enabling drift by tuning the balance between traction, power, and braking force, especially in rear-wheel drive (RWD) setups.
+Drifting is a driving technique that involves intentionally inducing **oversteer**, causing a loss of traction in the rear wheels while maintaining control throughout a corner. In this project, we focus on enabling controlled drift by tuning the balance between **traction**, **power**, and **braking force**, especially with a **rear-wheel drive (RWD)** configuration.
+
 <p align="center">
-    <img src=".images/drift_typical_connering.PNG" alt="coil" width="400" />
+    <img src=".images/drift_typical_connering.PNG" alt="Drift vs Typical Cornering" width="400" />
 </p>
 
-- In **typical cornering**, front tires steer in the direction of the curve, and rear tires maintain traction.
-- In **drift cornering**, the vehicle is rotated into the turn, and the **rear tires are saturated**, sliding outward as the front wheels counter-steer to maintain directional control.
-- The vehicle exhibits a **high sideslip angle (β)** and controlled **yaw rate (ψ)**, while lateral acceleration (aᵧ) still points toward the center of the curve.
+- In **typical cornering**, the front tires steer in the direction of the curve while the rear tires maintain grip.
+- In **drift cornering**, the car rotates into the turn with the **rear tires saturated**, sliding outward, while the front wheels counter-steer to guide the direction.
+- The vehicle exhibits a **high sideslip angle (β)** and controlled **yaw rate (ψ)**, while lateral acceleration (**aᵧ**) still points toward the center of the curve.
 
+## Things to Consider
+
+- Rear tire traction is intentionally reduced to initiate drift.
+- Front tires must maintain enough grip for counter-steering control.
+- Weight transfer helps unsettle the rear end.
+- Tire compound and surface friction significantly affect driftability.
+- Balance between motor torque and braking response is critical for stable drift control.
 
 ## Transmisstion system
 Originally based on an all-wheel-drive (AWD) layout, the F1TEETH platform has been modified to **rear-wheel drive (RWD)** to improve the ability to break traction at the rear wheels. This configuration allows better control over drifting behavior and enables intentional oversteer, which is essential for sustained drifts.
@@ -40,7 +48,6 @@ I chose to use a magnetic braking system because it requires the **least amount 
 
 <!-- * **Braking Schematic:** [Braking Schematic](/.images/Schematic_break_2025-06-20.png) -->
 
-## Mount
 
 ### Drum Brake Specifications
 | Property         | Value   |
