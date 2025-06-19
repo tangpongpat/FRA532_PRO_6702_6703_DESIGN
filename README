@@ -86,11 +86,30 @@ $$
 
 ***Estimated force:** 60 N at full load > RC car mass 3 KG
 
-##tesing & result 
+## Tesing & Result 
 
-## drift part
+### Front vs Rear Wheel Understeering
 
-## break part
+The following videos demonstrate the difference in understeering behavior between front-wheel and rear-wheel drive configurations:
+
+- [Front wheel understeering F1TEETH](https://youtu.be/fvo7P59drMA) — In front-wheel drive, **understeer typically requires braking** to shift the weight forward and reduce rear traction. Without braking, the front wheels tend to maintain grip, limiting the ability to rotate the vehicle.
+- [Rear wheel understeering F1TEETH](https://youtu.be/cZtpaluhPYI) — In rear-wheel drive, the car can **naturally induce understeer without braking**, due to rear torque overpowering traction. This makes it easier to break rear grip and start a drift even without applying the brake.
+
+### 🧪 Inertial Braking Test Results
+
+To test the effectiveness of each braking method, the car was released from a fixed starting point and allowed to accelerate under consistent conditions. The braking system was activated when the car reached a marked finish line. Two braking methods were compared:
+
+1. **ESC Brake** — electronic braking via the speed controller
+2. **Coil Brake** — electromagnetic braking using the custom coil 
+
+| Attempt | ESC Brake Distance | Coil Brake Distance |
+|---------|---------------------|----------------------|
+| 1       | 290 mm              | 144 mm               |
+| 2       | 280 mm              | 180 mm               |
+| 3       | 300 mm              | 165 mm               |
+
+**Observation:**  
+The coil brake consistently results in shorter stopping distances, confirming its ability to reduce rotational inertia more effectively than standard ESC braking. This allows the car to enter drift states more predictably and stop in tighter spaces.
 
 ### Known Issues (MK I)
 
@@ -102,4 +121,6 @@ $$
 
 ## Refferent
 
-https://www.mdpi.com/2079-9292/7/12/394
+[A Torque Vectoring Control for Enhancing Vehicle Performance in Drifting](https://www.mdpi.com/2079-9292/7/12/394)
+
+[How To Winding the Magnet Wire](https://www.instructables.com/POWERFUL-ELECTROMAGNET-5KG-LIFTING/)
