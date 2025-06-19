@@ -20,12 +20,29 @@ I chose to use a magnetic braking system because it requires the **least amount 
 
 
 
-## Hardware
-
-* **Braking Schematic:** [Braking Schematic](/.doc/Schematic_break_2025-06-09.pdf)
+## Schematic & Wiring Diagram
 
 
-###  Disc Brake Specifications
+<p align="center">
+    <img src=".images/Schematic_break_2025-06-20.png" alt="schematic" width="800" />
+</p>
+
+<p align="center">
+    <img src=".images/wiring.png" alt="wiring" width="800" />
+</p>
+
+
+<p align="center">
+    <img src=".images/F1_wring.png" alt="wiring" width="800" />
+</p>
+
+
+
+<!-- * **Braking Schematic:** [Braking Schematic](/.images/Schematic_break_2025-06-20.png) -->
+
+## Mount
+
+### Drum Brake Specifications
 | Property         | Value   |
 |------------------|---------|
 | Outer Diameter   | 14.5 mm |
@@ -45,7 +62,7 @@ I chose to use a magnetic braking system because it requires the **least amount 
 | Current          | \~8 A              |
 | Application Load | \~2 kg             |
 
-### 🧮 Magnetic Force Estimation
+### Magnetic Force Estimation
 
 | Symbol | Value          | Description                   |
 | ------ | -------------- | ----------------------------- |
@@ -62,14 +79,18 @@ $$
 
 ***Estimated force:** 60 N at full load > RC car mass 3 KG
 
+##tesing & result 
 
+## drift part
+
+## break part
 
 ### Known Issues (MK I)
 
-* **1.1** Mount misalignment between the coil’s actuator surface and the brake disc
+* **1.1** Mount misalignment between the coil’s actuator surface and the brake dump
 
 <p align="center">
-    <img src=".images/problem_1.JPG" alt="coil" width="200" />
+    <img src=".images/Problem_1.PNG" alt="coil" width="400" />
 </p>
 
 ## Refferent
