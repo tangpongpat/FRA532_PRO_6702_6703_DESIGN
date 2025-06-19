@@ -119,7 +119,14 @@ The coil brake consistently results in shorter stopping distances, confirming it
     <img src=".images/Problem_1.PNG" alt="coil" width="400" />
 </p>
 
-## Refferent
+### Roadmap
+
+- [ ] Connect circuit board with opto-isolate
+- [ ] Front Break
+- [ ] replace DIY Board with pcb 
+- [ ] Reposition the shock absorber mounting
+
+## Ref
 
 [A Torque Vectoring Control for Enhancing Vehicle Performance in Drifting](https://www.mdpi.com/2079-9292/7/12/394)
 
