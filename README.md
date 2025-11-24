@@ -126,7 +126,7 @@ The coil brake consistently results in shorter stopping distances, confirming it
 - [ ] replace DIY Board with pcb 
 - [ ] Reposition the shock absorber mounting
 - [ ] Minimize backlash on steering ackermann 
-
+- [ ] wisted pair for magnetic shielding
 ## Ref
 
 [A Torque Vectoring Control for Enhancing Vehicle Performance in Drifting](https://www.mdpi.com/2079-9292/7/12/394)
