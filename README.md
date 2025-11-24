@@ -119,7 +119,7 @@ The coil brake consistently results in shorter stopping distances, confirming it
     <img src=".images/Problem_1.PNG" alt="coil" width="400" />
 </p>
 
-### Roadmap
+### undone
 
 - [ ] Connect circuit board with opto-isolate
 - [ ] Front Break
